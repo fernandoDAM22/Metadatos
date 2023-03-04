@@ -100,6 +100,10 @@ public class VentanaPrincipal extends javax.swing.JFrame {
             public Class getColumnClass(int columnIndex) {
                 return types[columnIndex];
             }
+            boolean[] canEdit = new boolean[]{
+                    false, false, false, false, false
+            };
+
         });
         jScrollPane1.setViewportView(tablaDatos);
 
@@ -160,6 +164,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         }
         // Limpiar la tabla antes de agregar nuevos datos
         DefaultTableModel model = (DefaultTableModel) tablaDatos.getModel();
+
         model.setRowCount(0);
 
         // Agregar cada fila de datos a la tabla
@@ -169,6 +174,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         //le ponemos los colores a la tabla
         tablaDatos.getColumnModel().getColumn(0).setCellRenderer(new MyCellRenderer());
         tablaDatos.getColumnModel().getColumn(1).setCellRenderer(new MyCellRenderer());
+
 
 
     }//GEN-LAST:event_btnExtraerActionPerformed
